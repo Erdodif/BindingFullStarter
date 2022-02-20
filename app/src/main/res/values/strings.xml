@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BindingFull</string>
+    <string name="database_link">https://retoolapi.dev/Q304E6</string>
+    <string name="cim">Cím</string>
+    <string name="kategoria">Kategória</string>
+    <string name="hossz">Hossz</string>
+    <string name="ertekeles">Értékelés</string>
+    <string name="frissites">Frissítés</string>
+    <string name="uj">Új</string>
+</resources>

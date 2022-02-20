@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="phil.petrik.bindingfull.MainActivity"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="64"
+            android:layout_marginHorizontal="10dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_Films"
+                android:orientation="vertical"/>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/button_Sync"
+                android:text="@string/frissites"
+                android:textColor="#101010"
+                android:textSize="20sp"
+                android:backgroundTint="#2DBABA"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/button_New"
+                android:text="@string/uj"
+                android:textColor="#101010"
+                android:textSize="20sp"
+                android:backgroundTint="#2DBABA"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_Film_Inspector"
+            android:layout_width="match_parent"
+            android:minHeight="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonClose"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:padding="5dp"
+                app:icon="@drawable/ic_baseline_clear_24"
+                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAlter"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:padding="5dp"
+                app:icon="@drawable/ic_baseline_autorenew_24"
+                app:layout_constraintBaseline_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="filmCim, filmKategoria, filmHossz, filmErtekeles" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmCimLabel"
+                style="@style/BooringTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cim"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmCim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintTop_toTopOf="@id/filmCimLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmKategoriaLabel"
+                style="@style/BooringTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kategoria"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/filmCimLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmKategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintTop_toTopOf="@id/filmKategoriaLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmHosszLabel"
+                style="@style/BooringTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hossz"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/filmKategoriaLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmHossz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintTop_toTopOf="@id/filmHosszLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmErtekelesLabel"
+                style="@style/BooringTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ertekeles"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/filmHosszLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/filmErtekeles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintTop_toTopOf="@id/filmErtekelesLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_Film_Editor"
+            android:layout_width="match_parent"
+            android:minHeight="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCloseEditor"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:padding="5dp"
+                app:icon="@drawable/ic_baseline_clear_24"
+                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSend"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:padding="5dp"
+                app:icon="@drawable/ic_baseline_arrow_forward_24"
+                app:layout_constraintBaseline_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_Cim"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:hint="@string/cim">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_Kategoria"
+                app:layout_constraintTop_toBottomOf="@id/textInput_Cim"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:hint="@string/kategoria">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_Hossz"
+            app:layout_constraintTop_toBottomOf="@id/textInput_Kategoria"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:hint="@string/hossz">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInput_Ertekeles"
+            app:layout_constraintTop_toBottomOf="@id/textInput_Hossz"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:hint="@string/ertekeles">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
