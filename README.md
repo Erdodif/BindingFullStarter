@@ -2,7 +2,7 @@
 
 Ez a repó a Binding osztályok gyakorló projektje.
 
-# ViewBinding
+## ViewBinding
 
 A megírt *xml* resource-ból minden azonosítóval rendelkező elemhez egy **null-safe** hivatkozást csatol, amiket egy `activity` vagy `fragment` specifikus `binding` osztályba rendezi.
 
@@ -22,7 +22,7 @@ Ez mit is jelent?
 * Később, ha megváltoztatjuk az elem típusát (pl egyszerű gombról áttérünk a google új `Materialbutton` osztályára) a binding azt is követi, és mentés után annak minden funkciója elérhető.
   * Nyilván ha textview-ból állunk átt button-re, akkor a metódusok hivatkozása lehet gond, de erre számíthatunk.
 
-# DataBinding
+## DataBinding
 
 Az *xml* forráshoz saját típusú változót rendelhetünk, és annak a paramétereit tudod az adott elemekhez rendelni. A generált binding változóihoz getter és setter lessz kapcsolva, amivel az összes elem tartalmát lehet automatikusan átírni.
 
@@ -30,11 +30,11 @@ Az *xml* forráshoz saját típusú változót rendelhetünk, és annak a param�
 
 A DataBinding magába foglalja a ViewBinding osztályt, így elég csak az egyiket beállítani a gradle fájlban.
 
-## Importálás
+### Importálás
 
 Az importáláshoz az applikációhoz tartozó gradle fájlba kell az alábbi kiegészítést mellékelni. (Module: BindingFull.app)
 
-###### ViewBinding
+#### ViewBinding
 
 > ```gradle
 > android{
@@ -46,7 +46,7 @@ Az importáláshoz az applikációhoz tartozó gradle fájlba kell az alábbi ki
 > }
 > ```
 
-###### DataBinding
+#### DataBinding
 
 > ```gradle
 > android{
