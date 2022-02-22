@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton buttonSend;
     ConstraintLayout layoutFilmEditor;
     ConstraintLayout layoutFilmInspector;
+    TextView textViewFilmCim;
+    TextView textViewFilmKategoria;
+    TextView textViewFilmHossz;
+    TextView textViewFilmErtekeles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         buttonSend = findViewById(R.id.buttonSend);
         layoutFilmEditor = findViewById(R.id.layout_Film_Editor);
         layoutFilmInspector = findViewById(R.id.layout_Film_Inspector);
+        textViewFilmCim = findViewById(R.id.filmCim);
+        textViewFilmKategoria = findViewById(R.id.filmKategoria);
+        textViewFilmHossz = findViewById(R.id.filmHossz);
+        textViewFilmErtekeles = findViewById(R.id.filmErtekeles);
     }
 
     private void setFilm(int id) {
