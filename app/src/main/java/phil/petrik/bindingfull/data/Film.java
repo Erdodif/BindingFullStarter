@@ -4,13 +4,15 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 
 public class Film{
     private Integer id;
     private String cim;
     private String kategoria;
     private Integer hossz;
-    private Integer ertekels;//Az api félre van gépelve, szóval...
+    @SerializedName("ertekels") //Az api félre van gépelve, szóval...
+    private Integer ertekeles;
 
     public static Film emptyFilm(){
         return new Film(null,null,null,null,null);
@@ -21,7 +23,7 @@ public class Film{
         this.cim = cim;
         this.kategoria = kategoria;
         this.hossz = hossz;
-        this.ertekels = ertekels;
+        this.ertekeles = ertekels;
     }
 
     public Integer getId() {
@@ -44,12 +46,12 @@ public class Film{
         return hossz;
     }
 
-    public String getErtekelsString(){
-        return ertekels==null?"":ertekels.toString();
+    public String getErtekelesString(){
+        return ertekeles ==null?"": ertekeles.toString();
     }
 
-    public Integer getErtekels() {
-        return ertekels;
+    public Integer getErtekeles() {
+        return ertekeles;
     }
 
     public void setId(Integer id) {
@@ -77,24 +79,24 @@ public class Film{
         this.hossz = hossz;
     }
 
-    public void setErtekelsString(String ertekels) {
+    public void setErtekelesString(String ertekels) {
         try {
-            this.ertekels = Integer.parseInt(ertekels);
+            this.ertekeles = Integer.parseInt(ertekels);
         }
         catch (Exception e){
-            this.ertekels = 0;
+            this.ertekeles = 0;
         }
     }
 
-    public void setErtekels(int ertekels) {
-        this.ertekels = ertekels;
+    public void setErtekeles(int ertekeles) {
+        this.ertekeles = ertekeles;
     }
 
     @NonNull
     @Override
     public String toString() {
         return "id:" + id + ", cim:" + cim + ", kategoria:" + kategoria
-                + ", hossz:" + hossz + ", ertekeles:" + ertekels;
+                + ", hossz:" + hossz + ", ertekeles:" + ertekeles;
     }
 
     public String toJson() {
