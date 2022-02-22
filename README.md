@@ -32,7 +32,7 @@ A DataBinding magába foglalja a ViewBinding osztályt, így elég csak az egyik
 
 ## Importálás
 
-Az importáláshoz az applikációhoz tartozó gradle fájlba kell az alábbi kiegészítést mellékelni. (Module: BindingFul.app)
+Az importáláshoz az applikációhoz tartozó gradle fájlba kell az alábbi kiegészítést mellékelni. (Module: BindingFull.app)
 
 ###### ViewBinding
 
