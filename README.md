@@ -1,5 +1,7 @@
 # Binding osztályok
+
 Ez a repó a Binding osztályok gyakorló projektje.
+
 # ViewBinding
 
 A megírt *xml* resource-ból minden azonosítóval rendelkező elemhez egy **null-safe** hivatkozást csatol, amiket egy `activity` vagy `fragment` specifikus `binding` osztályba rendezi.
@@ -30,14 +32,17 @@ A DataBinding magába foglalja a ViewBinding osztályt, így elég csak az egyik
 
 ## Importálás
 
+Az importáláshoz az applikációhoz tartozó gradle fájlba kell az alábbi kiegészítést mellékelni. (Module: BindingFul.app)
 
 ###### ViewBinding
 
 > ```gradle
 > android{
+>  …
 >     buildFeatures{
 >         viewBinding true
 >     }
+>  …
 > }
 > ```
 
@@ -45,8 +50,10 @@ A DataBinding magába foglalja a ViewBinding osztályt, így elég csak az egyik
 
 > ```gradle
 > android{
+>  …
 >     buildFeatures{
 >         dataBinding true
 >     }
+>  …
 > }
 > ```
