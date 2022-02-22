@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setTitle("Módosítás");
         alertDialog.setMessage("Elvégzi a módosításokat?");
         alertDialog.setPositiveButton("Igen", (dialogInterface, i) -> {
+            Toast.makeText(MainActivity.this, "Film: "+film.toString(), Toast.LENGTH_SHORT).show();
             sendFilm(film, "POST");
         });
         alertDialog.setNegativeButton("Nem", (dialogInterface, i) -> {
