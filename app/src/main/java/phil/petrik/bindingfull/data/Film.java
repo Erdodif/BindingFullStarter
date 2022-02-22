@@ -79,9 +79,9 @@ public class Film{
         this.hossz = hossz;
     }
 
-    public void setErtekelesString(String ertekels) {
+    public void setErtekelesString(String ertekeles) {
         try {
-            this.ertekeles = Integer.parseInt(ertekels);
+            this.ertekeles = Integer.parseInt(ertekeles);
         }
         catch (Exception e){
             this.ertekeles = 0;
